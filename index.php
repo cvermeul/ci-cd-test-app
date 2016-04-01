@@ -7,6 +7,7 @@
 		<h1>CI/CD Test App</h1>
 		<p>A fake dockerized app for testing CI/CD</p>
 		<p>When this modification is pushed the app is automatically redeployed</p>
+		<p>Now modifications can't be done on master, they need to be merged from other branches</p>
 		<h2>User list</h2>
 		<table>
 		<?php
