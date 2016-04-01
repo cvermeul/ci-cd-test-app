@@ -6,5 +6,24 @@
 	<body>
 		<h1>CI/CD Test App</h1>
 		<p>A fake dockerized app for testing CI/CD</p>
+		<h2>User list</h2>
+		<table>
+		<?php
+			$conn = mysql_connect($_ENV['APP_DB_HOST'], $_ENV['APP_DB_USER'], $_ENV['APP_DB_PASSWORD']);
+			if (!$conn) die('Not connected : ' . mysql_error());
+
+			$db = mysql_select_db('test', $conn); 
+			if (!$db) die('Can\'t find database : ' . mysql_error());
+
+			$result = mysql_query('SELECT * FROM test'); 
+			if (!$result) die('Invalid query: ' . mysql_error());
+
+			while($row = mysql_fetch_assoc($result)) { 
+				echo '<tr><td>'.$row['id'].'</td><td>'.$row['name'].'</td></tr>'; 
+			} 
+
+			mysql_close(); 
+		?> 
+		</table>
 	</body>
 </html>
