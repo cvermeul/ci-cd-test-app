@@ -6,6 +6,7 @@
 	<body>
 		<h1>CI/CD Test App</h1>
 		<p>A fake dockerized app for testing CI/CD</p>
+		<p>When this modification is pushed the app is automatically redeployed</p>
 		<h2>User list</h2>
 		<table>
 		<?php
